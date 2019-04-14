@@ -42,10 +42,10 @@ describe('modle', ()=> {
   it('should add item to  list',() => {
     const items = WishListModel.create()
 
-    items.addWishlist({
+    items.addWishlist(WishListItemModel.create({
       name: 'car',
       price: 34
-    });
+    }));
 
     expect(items.list[0].price).toEqual(34)
   })
