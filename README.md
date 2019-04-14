@@ -66,3 +66,21 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+---------------------------------MOBX state tree---------------
+instatll mox mobx-react and mobx-state-tree
+create models folder // 
+create Wishlist model name price image //this is snapshots
+
+import types form  mobx
+export const WishlistItemMOdel = types.model to create model ({
+  name: types.string,
+  price and image 
+})
+to create istance call WishlistModel.create
+create WishlistModel 
+items: types.optional((types.array(WishlistItem), [] -default )
+
+create action change name and change price
+self => ({})
