@@ -84,3 +84,10 @@ items: types.optional((types.array(WishlistItem), [] -default )
 
 create action change name and change price
 self => ({})
+
+test snapshot
+
+use onSnapshot to track state
+expect(state).toMatchSnapshot
+
+use onPatch to track changes

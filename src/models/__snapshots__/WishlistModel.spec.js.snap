@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`modle should add item to  list 1`] = `
+Object {
+  "list": Array [
+    Object {
+      "image": "",
+      "name": "car",
+      "price": 66,
+    },
+  ],
+}
+`;
+
+exports[`modle should add item to  list 2`] = `
+Array [
+  Object {
+    "list": Array [
+      Object {
+        "image": "",
+        "name": "car",
+        "price": 34,
+      },
+    ],
+  },
+  Object {
+    "list": Array [
+      Object {
+        "image": "",
+        "name": "car",
+        "price": 66,
+      },
+    ],
+  },
+]
+`;
+
+exports[`modle should add item to  list 3`] = `
+Array [
+  Object {
+    "op": "add",
+    "path": "/list/0",
+    "value": Object {
+      "image": "",
+      "name": "car",
+      "price": 34,
+    },
+  },
+  Object {
+    "op": "replace",
+    "path": "/list/0/price",
+    "value": 66,
+  },
+]
+`;
