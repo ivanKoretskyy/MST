@@ -2,6 +2,8 @@ import { WishListItemModel, WishListModel } from './WishlistModel';
 
 import { getSnapshot, onSnapshot, onPatch } from 'mobx-state-tree';
 
+import { reaction } from 'mobx';
+
 describe('modle', ()=> {
   it('should create item',() => {
     const item = WishListItemModel.create({
@@ -64,5 +66,30 @@ describe('modle', ()=> {
     expect(getSnapshot(items)).toMatchSnapshot();
     expect(states).toMatchSnapshot();
     expect(patches).toMatchSnapshot();
+  })
+
+  it('should calculate toal price', () => {
+    const wishlist = WishListModel.create({
+      list: [
+        {
+          name: 'a',
+          price: 4
+        },
+        {
+          name: 'b',
+          price: 4
+      }
+      ]
+    })
+
+    reaction(() => wishlist.totalPrice, (price) => console.log(price))
+    const price = wishlist.totalPrice;
+    expect(price).toEqual(8);
+    wishlist.addWishlist({
+      name: 'bike',
+      price: 44,
+    })
+    expect(wishlist.totalPrice).toEqual(52)
+
   })
 })

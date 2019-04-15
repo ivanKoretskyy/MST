@@ -91,3 +91,8 @@ use onSnapshot to track state
 expect(state).toMatchSnapshot
 
 use onPatch to track changes
+
+add views of total price
+log reaction
+
+--create wishlist and wishlist item pass data thou props , decorate with observer 
