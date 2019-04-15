@@ -13,7 +13,7 @@ class WishItem extends Component {
   }
 
   onChangeName(e) {
-    this.props.item.changeName(e.target.value)
+    this.state.clone.changeName(e.target.value)
   }
 
   onChangePrice = (e) => {
@@ -40,7 +40,7 @@ class WishItem extends Component {
       <div>
         <span>{this.props.item.name}, </span>
         {this.state.edit &&
-          <input type="text" value={clone.name} onChange={this.onChangeName.bind(this)} />
+          <input type="text" value={this.state.clone.name} onChange={this.onChangeName.bind(this)} />
         }
         
         <span>{this.props.item.price}</span>
@@ -50,6 +50,7 @@ class WishItem extends Component {
         <button onClick={this.activeEdit}>edit</button>
         <button onClick={this.save}>save</button>
         <button onClick={this.cancel}>cancel</button>
+        <button onClick={this.props.item.remove}>remove</button>
         
       </div>
     );
