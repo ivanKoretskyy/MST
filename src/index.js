@@ -4,7 +4,20 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { WishListModel } from './models/WishlistModel';
+
+const list = WishListModel.create({list: [
+  {
+    name: 'cars',
+    price: 100
+  },
+  {
+    name: 'home',
+    price: 200
+  }
+]})
+
+ReactDOM.render(<App wishlist={list}/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
